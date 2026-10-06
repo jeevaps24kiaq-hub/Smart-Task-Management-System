@@ -1,0 +1,12 @@
+
+node_modules/
+.env
+.env.*
+token/
+tf/week5-terraform-ansible/awscliv2/
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+
