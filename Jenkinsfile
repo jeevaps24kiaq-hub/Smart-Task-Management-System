@@ -71,7 +71,7 @@ pipeline {
 
         stage('Trivy File System Scan') {
             steps {
-                /usr/local/bin/trivy --config "" fs --severity HIGH,CRITICAL --format table --skip-dirs tf/week5-terraform-ansible/awscliv2 --exit-code 0 .
+                /usr/local/bin/trivy --config /dev/null fs --severity HIGH,CRITICAL --format table --skip-dirs tf/week5-terraform-ansible/awscliv2 --exit-code 0 .
 
             }
         }
@@ -85,12 +85,12 @@ pipeline {
         stage('Trivy Docker Image Scan') {
             steps {
                 sh """
-                /usr/local/bin/trivy --config "" image --severity HIGH,CRITICAL --exit-code 0 ${AUTH_IMAGE}:latest
-                /usr/local/bin/trivy --config "" image --severity HIGH,CRITICAL --exit-code 0 ${TASK_IMAGE}:latest
-                /usr/local/bin/trivy --config "" image --severity HIGH,CRITICAL --exit-code 0 ${NOTIFICATION_IMAGE}:latest
-                /usr/local/bin/trivy --config "" image --severity HIGH,CRITICAL --exit-code 0 ${REPORT_IMAGE}:latest
-                /usr/local/bin/trivy --config "" image --severity HIGH,CRITICAL --exit-code 0 ${API_IMAGE}:latest
-                /usr/local/bin/trivy --config "" image --severity HIGH,CRITICAL --exit-code 0 ${FRONTEND_IMAGE}:latest
+                /usr/local/bin/trivy --config /dev/null image --severity HIGH,CRITICAL --exit-code 0 ${AUTH_IMAGE}:latest
+                /usr/local/bin/trivy --config /dev/null image --severity HIGH,CRITICAL --exit-code 0 ${TASK_IMAGE}:latest
+                /usr/local/bin/trivy --config /dev/null image --severity HIGH,CRITICAL --exit-code 0 ${NOTIFICATION_IMAGE}:latest
+                /usr/local/bin/trivy --config /dev/null image --severity HIGH,CRITICAL --exit-code 0 ${REPORT_IMAGE}:latest
+                /usr/local/bin/trivy --config /dev/null image --severity HIGH,CRITICAL --exit-code 0 ${API_IMAGE}:latest
+                /usr/local/bin/trivy --config /dev/null image --severity HIGH,CRITICAL --exit-code 0 ${FRONTEND_IMAGE}:latest
                 """
             }
         }
