@@ -71,10 +71,13 @@ pipeline {
 
         stage('Trivy File System Scan') {
             steps {
-                /usr/local/bin/trivy --config /dev/null fs --severity HIGH,CRITICAL --format table --skip-dirs tf/week5-terraform-ansible/awscliv2 --exit-code 0 .
-
+                sh '''
+                    /usr/local/bin/trivy --config=/dev/null fs --severity HIGH,CRITICAL --format table --skip-dirs tf/week5-terraform-ansible/awscliv2 --exit-code 0 .
+                '''
             }
         }
+
+
 
         stage('Build Docker Images') {
             steps {
