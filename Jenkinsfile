@@ -11,12 +11,15 @@ pipeline {
         HARBOR_URL = "13.48.106.244"
         HARBOR_PROJECT = "smart-task-management-system"
 
-        AUTH_IMAGE = "smart-task-management-system-auth-service"
-        TASK_IMAGE = "smart-task-management-system-task-service"
-        NOTIFICATION_IMAGE = "smart-task-management-system-notification-service"
-        REPORT_IMAGE = "smart-task-management-system-report-service"
-        API_IMAGE = "smart-task-management-system-api-gateway"
-        FRONTEND_IMAGE = "smart-task-management-system-frontend"
+        
+        AUTH_IMAGE = "smart-task-management-pipeline-new-auth-service"
+        TASK_IMAGE = "smart-task-management-pipeline-new-task-service"
+        NOTIFICATION_IMAGE = "smart-task-management-pipeline-new-notification-service"
+        REPORT_IMAGE = "smart-task-management-pipeline-new-report-service"
+        API_IMAGE = "smart-task-management-pipeline-new-api-gateway"
+        FRONTEND_IMAGE = "smart-task-management-pipeline-new-frontend"
+
+
 
         IMAGE_TAG = "${BUILD_NUMBER}"
 
